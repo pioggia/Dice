@@ -1,11 +1,27 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Dice extends PApplet {
+
 int x, y, dotNum, xmove, ymove, sum;
-void setup()
+public void setup()
 {
 	noLoop();
 	size(500, 500);
 	background(39, 40, 34);
 }
-void draw()
+public void draw()
 {
 	Die uno = new Die(190, 225);
 	Die due = new Die(290, 225);
@@ -17,7 +33,7 @@ void draw()
 	textSize(15);
 	text(sum, 150, 450);
 }
-void mousePressed()
+public void mousePressed()
 {
 	background(39, 40, 34);
 	redraw();
@@ -36,11 +52,11 @@ class Die
 		y=myY;
 		dotNum=(int)(Math.random()*6)+1;
 	}
-	void roll()
+	public void roll()
 	{		
 		System.out.println(dotNum);
 	}
-	void show()
+	public void show()
 	{
 		stroke(149, 253, 224);
 		noFill();
@@ -118,4 +134,13 @@ class Die
 			}
 		}
 	}
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Dice" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
