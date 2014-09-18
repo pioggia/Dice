@@ -13,6 +13,9 @@ void draw()
 	uno.show();
 	due.roll();
 	due.show();
+	sum=uno.dotNum+due.dotNum;
+	textSize(15);
+	text(sum, 150, 450);
 }
 void mousePressed()
 {
@@ -35,9 +38,7 @@ class Die
 	}
 	void roll()
 	{		
-		sum=uno.dotNum+due.dotNum;
-	textSize(15);
-	text(sum, 150, 450);
+		System.out.println(dotNum);
 	}
 	void show()
 	{
