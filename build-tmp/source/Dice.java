@@ -50,11 +50,10 @@ class Die
 	{
 		x=myX;
 		y=myY;
-		dotNum=(int)(Math.random()*6)+1;
 	}
 	public void roll()
-	{		
-		System.out.println(dotNum);
+	{	
+		dotNum=(int)(Math.random()*6)+1;
 	}
 	public void show()
 	{

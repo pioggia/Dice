@@ -1,12 +1,15 @@
+PImage circle;
 int x, y, dotNum, xmove, ymove, sum;
 void setup()
 {
+  circle = loadImage("circle.gif");
 	noLoop();
 	size(500, 500);
 	background(39, 40, 34);
 }
 void draw()
 {
+  image(circle, 250, 250, circle.width/3, circle.height/3);
 	Die uno = new Die(190, 225);
 	Die due = new Die(290, 225);
 	uno.roll();
@@ -34,11 +37,10 @@ class Die
 	{
 		x=myX;
 		y=myY;
-		dotNum=(int)(Math.random()*6)+1;
 	}
 	void roll()
-	{		
-		System.out.println(dotNum);
+	{	
+		dotNum=(int)(Math.random()*6)+1;
 	}
 	void show()
 	{
