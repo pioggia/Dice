@@ -39,7 +39,7 @@ class Die
 		y=myY;
 	}
 	void roll()
-	{	
+        {
 		dotNum=(int)(Math.random()*6)+1;
 	}
 	void show()
